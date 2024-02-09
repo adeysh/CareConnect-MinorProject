@@ -75,10 +75,12 @@
           <div class="card p-2 glass">
             <div class="card-body">
               <!-- form start  -->
-              <form>
+              <form method="post">
+                {% csrf_token %}
                 <div class="mb-3">
                   <input
                     type="email"
+                    name="username"
                     class="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
@@ -88,6 +90,7 @@
                 <div class="mb-3">
                   <input
                     type="password"
+                    name="password"
                     class="form-control"
                     id="exampleInputPassword1"
                     placeholder="Password"
@@ -98,7 +101,7 @@
                 </div>
                 <hr />
                 <div class="d-grid gap-2">
-                  <a href="register.html" class="btn btn-primary"
+                  <a href="/register/" class="btn btn-primary"
                     >Register here</a
                   >
                 </div>
